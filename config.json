@@ -4,6 +4,6 @@
     "port": 3306,
     "user": "root",
     "password": "",
-    "database": "english_in_eight"
+    "myDatabase": "english_in_eight"
   }
 }

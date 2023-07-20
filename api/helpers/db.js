@@ -2,9 +2,10 @@
 //sequelize will check the database table definitions and compare them to the model definitions
 const config = require("config.json"); //
 const sql = require("mysql2/promise");
-const { Sequelize } = require("sequelize");
+const { Sequelize } = require("sequelize");  //Sequelize is a model from sequelize to compare the db model with the backend model
 
-module.exports = db = {};
+module.exports = db = {}; //mod ju ul = {} this equals and curly brackets is assigned a empty field at first before
+//the initializtion function executes
 
 initialize();
 
@@ -17,9 +18,16 @@ async function initialize() {
     password,
   });
   await connection.query(`CREATE DATABASE IF NOT EXISTS \`${database}\`;`);
-  const sequelize = new Sequelize(database, user, password, {
+  //if there is no database use config database
+  const sequelize = new Sequelize(database, user, password, {  //database, user, password
+    //confirming for example that my id is an integer (because it is defined as an integer in the database)
     dialect: "mysql",
   });
-  db.verb = require("../verbs/verb.model")(sequelize);
+  db.verb = require("../simple_present/verb.model")(sequelize);
+  //the verb above is created now and after will be added to the empty brackets ( module exports = db = {}) ("../simple_present/verb.model")(sequelize); matching the definitions between the database and the backend
   await sequelize.sync({ alter: true });
+  //this means that every time we use the sequelize it's a synchronous function 
+  //{alter: true} 
 }
+
+
