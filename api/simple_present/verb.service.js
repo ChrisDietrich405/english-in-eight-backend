@@ -1,15 +1,13 @@
 //responsible for connecting all my crud operations from the controller to the database
 const sequelize = require("sequelize")
-const db = require("helpers/db")
+const db = require("../helpers/db")
 
+module.exports = {getAll};
 
-class VerbService {
-    create(name, positive, positiveShortForm, negative, negativeShortForm) {
-        
-    }
+async function getAll() {
+    return await db.verb.findAll();
 }
 
-module.exports = VerbService;
 
 
 

@@ -6,7 +6,7 @@
 const express = require("express");
 const model = require("./verb.model");
 const router = express.Router();
-const verbService = require(); //connect the verbService to the database 
+const verbService = require("./verb.service"); //connect the verbService to the database 
 
 router.get("/", getAll);
 
@@ -15,6 +15,5 @@ module.exports = router;
 function getAll(req, res, next) { // next is for errors
     verbService.getAll().then(verbs => res.json(verbs)).catch(next);  // the verbs are coming from the db
     //after the getAll function gets them and if it's successful they are converted to JSON
-
 }
 

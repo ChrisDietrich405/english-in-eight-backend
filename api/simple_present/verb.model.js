@@ -32,5 +32,5 @@ function model(sequelize) {
     }
 
   };
-  return sequelize.define("verb", attributes); 
+  return sequelize.define("simple_present", attributes); 
 }
