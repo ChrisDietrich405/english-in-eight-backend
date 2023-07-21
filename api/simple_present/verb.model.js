@@ -32,5 +32,5 @@ function model(sequelize) {
     }
 
   };
-  return sequelize.define("simple_present", attributes); 
+  return sequelize.define("simple_present", attributes, {freezeTableName: true}); 
 }

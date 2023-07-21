@@ -1,31 +1,12 @@
 //responsible for connecting all my crud operations from the controller to the database
-const sequelize = require("sequelize")
-const db = require("../helpers/db")
+const db = require("../helpers/db");
 
-module.exports = {getAll};
+module.exports = { getAll };
 
 async function getAll() {
-    return await db.verb.findAll();
+  console.log(db);
+  return await db.verb.findAll();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

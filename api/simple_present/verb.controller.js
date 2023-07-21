@@ -2,13 +2,13 @@
 //and we can add validation here. Next the verb.service file will receive the getAll func
 //from here and any functions in the controller need to be in the service file. The 
 //service file acts like a door to the database
+//the controller calls the service
 
 const express = require("express");
-const model = require("./verb.model");
 const router = express.Router();
 const verbService = require("./verb.service"); //connect the verbService to the database 
 
-router.get("/", getAll);
+router.get("/", getAll); //this is executing getAll and the "/" is the endpoint
 
 module.exports = router; 
 
