@@ -4,7 +4,7 @@ const config = require("../../config.json"); //
 const mysql = require("mysql2/promise");
 const { Sequelize } = require("sequelize"); //Sequelize is a model from sequelize to compare the db model with the backend model
 
-module.exports = db = {}; // = {} this equals and curly brackets is assigned a empty field at first before
+module.exports = db = {}; // = {}  empty field at first before
 //the initializtion function executes
 
 (async () => {

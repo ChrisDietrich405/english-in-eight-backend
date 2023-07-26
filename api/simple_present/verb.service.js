@@ -1,13 +1,11 @@
 //responsible for connecting all my crud operations from the controller to the database
 const db = require("../helpers/db");
 
-module.exports = { getAll };
-
 async function getAll() {
-  console.log(db);
   return await db.verb.findAll();
 }
 
+module.exports = { getAll };
 
 
 // app.get(`/verbspositiveandnegative`, (req,res) => {
