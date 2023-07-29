@@ -3,6 +3,7 @@
 const express = require("express");
 const app = express();
 const simplePresentRoute = require("./api/simple_present/verb.route");
+const simplePastRoute = require("./api/simple_past/verb.route");
 
 // const db = require("./api/helpers/db");
 const mysql = require("mysql2");
@@ -12,6 +13,10 @@ dotenv.config();
 
 app.use(cors());
 app.use(express.static("public"));
-app.use("/verb", simplePresentRoute);
+app.use(express.json());
+
+app.use("/simple-present", simplePresentRoute);
+app.use("/simple-past", simplePastRoute);
+
 
 app.listen(process.env.port);

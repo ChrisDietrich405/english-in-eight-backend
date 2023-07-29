@@ -1,26 +1,37 @@
-const { DataTypes } = require("sequelize")
+const db = require("./db");
+const { DataTypes } = require("sequelize");
+//with this connection we can define the tables of the database
 
-function model(sequelize) {
-    const attributes = {
-        id: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-        }, 
-        positive: {
-            type: DataTypes.STRING,
-            allowNull: false
-        }, 
-        negative: {
-            type: DataTypes.STRING,
-            allowNull: false
-        }, 
-        negativeShortForm: {
-            type: DataTypes.STRING,
-            allowNull: false
-        }
-    }
-    return sequelize.define("simple_past", attributes, {freezeTableName: true})
-}
+const verbModel = db.define(
+  "simple_past",
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    positive: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    negative: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    negativeShortForm: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    createdAt: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    updatedAt: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  },
+  { freezeTableName: true }
+);
 
-module.exports = model 
+module.exports = verbModel;

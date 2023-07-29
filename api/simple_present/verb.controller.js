@@ -1,16 +1,8 @@
-//this is the second file and we are defining our crud operators here
-//and we can add validation here. Next the verb.service file will receive the getAll func
-//from here and any functions in the controller need to be in the service file. The 
-//service file acts like a door to the database
-//the controller calls the service
+const verbModel = require("./verb.model");
 
+const getAll = async (req, res) => {
+  const result = await verbModel.findAll();
+  res.status(200).json(result);
+};
 
-
-const verbService = require("./verb.service"); //connect the verbService to the database 
-
-function getAll(req, res, next) { // next is for errors
-    verbService.getAll().then(verbs => res.json(verbs)).catch(next);  // the verbs are coming from the db
-    //after the getAll function gets them and if it's successful they are converted to JSON
-}
-
-module.exports = getAll
+module.exports = getAll;
