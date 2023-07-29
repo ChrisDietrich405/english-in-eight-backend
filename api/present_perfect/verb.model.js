@@ -2,7 +2,7 @@ const db = require("./db");
 const { DataTypes } = require("sequelize");
 
 const verbModel = db.define(
-  "present_progressive",
+  "present_perfect",
   {
     id: {
       type: DataTypes.INTEGER,
@@ -13,15 +13,16 @@ const verbModel = db.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    positiveShortForm: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+
     negative: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     negativeShortForm: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    positiveShortForm: {
       type: DataTypes.STRING,
       allowNull: false,
     },
